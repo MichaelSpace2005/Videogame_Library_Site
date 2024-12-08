@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://avatars.mds.yandex.net/i?id=0529ecb6125d9026b017703c05a0960d_l-8159518-images-thumbs&n=13') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            transition: background-color 0.5s;
+            cursor: url('https://example.com/cursor.png'), auto;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-color: rgba(0, 0, 0, 0.8); }
+            25% { background-color: rgba(255, 165, 0, 0.5); }
+            50% { background-color: rgba(255, 0, 0, 0.5); }
+            75% { background-color: rgba(255, 165, 0, 0.5); }
+            100% { background-color: rgba(0, 0, 0, 0.8); }
+        }
+
+        body {
+            animation: backgroundAnimation 10s infinite;
+        }
+
+        #settings-container {
+            margin-top: 10%;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s;
+        }
+
+        #settings-container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: red;
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.7);
+        }
+
+
+
+        .button {
+            background-color: red;
+            border: 3px solid black;
+            color: black;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.5em;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px red;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+
+        .button:before {
+            content: '';
+            position: absolute;
+            background: rgba(255, 0, 0, 0.2);
+            z-index: 0;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s;
+        }
+
+        .button:hover:before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+
+    <style>
+        body {
+        cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.8,9.4,4.87,2.18A2,2,0,0,0,2.18,4.87h0L9.4,20.8A2,2,0,0,0,11.27,22h.25a2.26,2.26,0,0,0,2-1.8l1.13-5.58,5.58-1.13a2.26,2.26,0,0,0,1.8-2A2,2,0,0,0,20.8,9.4Z" style="fill: rgb(255, 133, 231);"/></svg>') 12 12, auto;
+        }
+        .cursor-1 {
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.8,9.4,4.87,2.18A2,2,0,0,0,2.18,4.87h0L9.4,20.8A2,2,0,0,0,11.27,22h.25a2.26,2.26,0,0,0,2-1.8l1.13-5.58,5.58-1.13a2.26,2.26,0,0,0,1.8-2A2,2,0,0,0,20.8,9.4Z" style="fill: rgb(120, 120, 120);"/></svg>') 12 12, auto;
+        }
+    </style>
+    <script>
+        let currentCursor = 'cursor-0';
+
+        document.addEventListener('dblclick', () => {
+            if (currentCursor === 'cursor-0') {
+                document.body.classList.add('cursor-1');
+                document.body.classList.remove('cursor-0');
+                currentCursor = 'cursor-1';
+            } else {
+                document.body.classList.remove('cursor-1');
+                document.body.classList.add('cursor-0');
+                currentCursor = 'cursor-0';
+            }
+        });
+    </script>
+</head>
+<body>
+<div id="settings-container">
+    <h1>Настройки</h1>
+    <button class="button">
+        <a href="index.html" target="_blank">
+        <span>Сменить стиль</span>
+    </button>
+    <button class="button">
+        <span>Изменить фон</span>
+    </button>
+    <button class="button" id="cursor-btn">
+        <span>Сменить курсор</span>
+    </button>
+    <button class="button">
+        <span>Выход</span>
+        <a href="index.html" target="_blank">
+    </button>
+</div>
+<footer>
+    © 2024 Mihail
+</footer>
+</body>
+</html>

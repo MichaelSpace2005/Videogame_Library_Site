@@ -1,0 +1,187 @@
+body {
+    background-image: url("https://avatars.mds.yandex.net/i?id=0529ecb6125d9026b017703c05a0960d_l-8159518-images-thumbs&n=13");
+    background-repeat: no-repeat;
+    background-size: cover; /* Use cover instead of 100% for better scaling */
+    background-attachment: fixed;
+    color: #fff;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Изменено на 'Press Start 2P' для ретро стиля */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://avatars.mds.yandex.net/i?id=0529ecb6125d9026b017703c05a0960d_l-8159518-images-thumbs&n=13') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    transition: background-color 0.5s;
+    cursor: url('https://example.com/cursor.png'), auto;
+    background-color: #222;
+    margin: 0;
+    padding: 20px; /* Отступы */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    animation: backgroundAnimation 10s infinite;
+}
+
+.article-banner {
+    margin-bottom: 30px; /* Reduced margin */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    gap: 10px;
+}
+
+.big-banner img{
+    border: 3px solid red;
+    max-width:1000px;
+    max-height:450px;
+}
+
+.article-banner img {
+    max-width: 100%; /* Make image responsive */
+    height: auto;
+    border-radius: 16px;
+}
+
+.floatable-content {
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+#concord {
+    border-radius: 16px;
+    max-width: 100%;
+    margin: 10px 0px;
+}
+
+.simple-banners {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping to multiple rows */
+    justify-content: center;
+    gap: 20px; /* Add spacing between banners */
+}
+
+.simple-banner {
+    width: 200px;
+    text-align: center; /* Center text within each banner */
+    background-color: #444;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    position: relative;
+    border: 3px solid red;
+}
+
+.simple-banner img {
+    max-width: 100%; /* Make image responsive */
+    width: 200px;
+    height: auto;
+    border-radius: 16px;
+    display: block; /* Prevent small space below image */
+}
+
+.simple-banner a {
+    color: #fff;
+    text-decoration: none;
+    display: block; /* Make the whole banner clickable */
+}
+
+.simple-banner:hover {
+    transform: scale(1.05);
+}
+
+.form-example {
+    margin-bottom: 10px;
+}
+
+.form-example label {
+    display: block;
+}
+
+/* Change the color of links on hover */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: red;
+    color: black;
+}
+/*______________________________________*/
+
+
+@keyframes backgroundAnimation {
+    0% { background-color: rgba(0, 0, 0, 0.8); }
+    25% { background-color: rgba(255, 165, 0, 0.5); }
+    50% { background-color: rgba(255, 0, 0, 0.5); }
+    75% { background-color: rgba(255, 165, 0, 0.5); }
+    100% { background-color: rgba(0, 0, 0, 0.8); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    animation: fadeIn 1s;
+    color: red;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Общий медиазапрос для экранов до 768px */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 1.2em;
+    }
+
+    .simple-banner {
+        width: 150px;
+    }
+
+    .simple-banners {
+        gap: 10px;
+    }
+}
+
