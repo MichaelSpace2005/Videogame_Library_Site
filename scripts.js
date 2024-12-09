@@ -1,4 +1,4 @@
-const cursor-1 = [
+const cursorStyles = [
   "auto",
   "crosshair",
   "default",
@@ -23,7 +23,7 @@ const cursor-1 = [
 
 let currentCursor = 'cursor-0';
 
-document.addEventListener('click', ("cursor-btn") => {
+document.addEventListener('click', () => {
   if (currentCursor === 'cursor-0') {
     document.body.classList.add('cursor-1');
     document.body.classList.remove('cursor-0');
@@ -33,4 +33,17 @@ document.addEventListener('click', ("cursor-btn") => {
     document.body.classList.add('cursor-0');
     currentCursor = 'cursor-0';
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .cursor-0 {
+      cursor:default;
+}
+    .cursor-1{
+     cursor: ${cursorStyles[Math.floor(Math.random() * cursorStyles.length)]};
+}
+    `;
+  document.head.appendChild(style);
 });
